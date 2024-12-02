@@ -12,10 +12,12 @@ public class TreeNode<T extends Comparable<T>> {
     }
 
     public TreeNode<T> getDireito() {
+
         return direito;
     }
 
     public TreeNode<T> getEsquerdo() {
+
         return esquerdo;
     }
 

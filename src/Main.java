@@ -1,15 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String caminhoTexto = "texto.txt"; // Caminho do texto-base.
+        String caminhoPalavrasChave = "palavras-chave.txt"; // Caminho das palavras-chave.
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Processar o texto.
+        ProcessadorTexto processadorTexto = new ProcessadorTexto();
+        processadorTexto.processarTexto(caminhoTexto);
+
+        // Buscar palavras-chave.
+        BuscadorPalavrasChave buscador = new BuscadorPalavrasChave(processadorTexto.getTabelaHash());
+        buscador.buscarPalavrasChave(caminhoPalavrasChave);
+
+        // Imprimir índice remissivo completo (opcional).
+        System.out.println("\nÍndice Remissivo Completo:");
+        processadorTexto.getTabelaHash().imprimirIndiceRemissivo();
     }
 }
