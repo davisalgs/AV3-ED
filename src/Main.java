@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        String caminhoTexto = "texto.txt"; // Caminho do texto-base.
-        String caminhoPalavrasChave = "palavras-chave.txt"; // Caminho das palavras-chave.
+        String caminhoTexto = "resources/texto.txt";
+        String caminhoPalavrasChave = "resources/palavras-chave.txt";
+
 
         // Processar o texto.
         ProcessadorTexto processadorTexto = new ProcessadorTexto();

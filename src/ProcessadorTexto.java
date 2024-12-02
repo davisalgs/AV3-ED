@@ -21,7 +21,7 @@ public class ProcessadorTexto {
             int numeroLinha = 1;
 
             while ((linha = reader.readLine()) != null) {
-                String[] palavras = linha.split("[^a-zA-ZÀ-ÿ]+"); // Divide ignorando pontuações.
+                String[] palavras = linha.split("[^a-zA-ZÀ-ÿ]+");
                 for (String palavra : palavras) {
                     if (!palavra.isEmpty()) {
                         tabelaHash.inserir(palavra, numeroLinha);
